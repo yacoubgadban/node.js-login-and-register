@@ -5,8 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm start",
-    "server": "npm start"
+    "start": "node app.js",
+    "server": "node app.js"
   },
   "author": "yacoub gadban",
   "license": "ISC",
