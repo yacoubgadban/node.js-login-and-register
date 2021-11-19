@@ -4,8 +4,8 @@
   "description": "node.js login and register",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
   },
   "author": "yacoub gadban",
   "license": "ISC",
