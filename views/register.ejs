@@ -9,38 +9,39 @@
     <title>Document</title>
 </head>
 <body>
-  <a href="/login"><button type="" class="btn btn-primary">Login</button></a>
-    <div class="container">
-        <h3>Register</h3>
-        <br><br>
-        <div>
+  <br><br><br><br>
+    <div class="title container">
+        <h2>Register <a href="/login"><button type="" class="btn btn-warning">Login</button></a></h2>
+        <br>
+        <div > 
             <form method="post" action="/register">
-                <div >
-                  <label for="validationDefault01" class="form-label">First name</label>
-                  <input type="text" class="form-control" id="validationDefault01" name="fname" required>
+                <div class="col-md-3">
+                  <input type="text" class="form-control" placeholder="Enter your first name" id="validationDefault01" name="fname" required>
                 </div>
-                <div class="col-md-4">
-                  <label for="validationDefault02" class="form-label">Last name</label>
-                  <input type="text" class="form-control" id="validationDefault02" name="lname" required>
+                <br>
+                <div class="col-md-3">
+                  <input type="text" class="form-control" placeholder="Enter your last name" id="validationDefault02" name="lname" required>
                 </div>
-                <div class="col-md-4">
-                  <label for="validationDefaultUsername" class="form-label">Email</label>
+                <br>
+
+                <div class="col-md-3">
                   <div class="input-group">
-                    <span class="input-group-text" id="inputGroupPrepend2">@</span>
-                    <input type="text" class="form-control" id="validationDefaultUsername" name="email" aria-describedby="inputGroupPrepend2" required>
+                    <input type="text" class="form-control" placeholder="Enter your email address" id="validationDefaultUsername" name="email" aria-describedby="inputGroupPrepend2" required>
                   </div>
                 </div>
-                <div class="col-md-4">
-                    <label for="validationDefault02" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="validationDefault02" name="password"  required>
+                <br>
+
+                <div class="col-md-3">
+                    <input type="password" class="form-control" placeholder="Enter your password" id="validationDefault02" name="password"  required>
                   </div>
-                  <div class="col-md-4">
-                    <label for="validationDefault02" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="validationDefault02" name="password2" required>
+                  <br>
+
+                  <div class="col-md-3">
+                    <input type="password" class="form-control" placeholder="Enter your password again" id="validationDefault02" name="password2" required>
                   </div>
                 <br>
                 <div class="col-12">
-                  <button class="btn btn-primary" type="submit">Register</button>
+                  <button class="btn btn-outline-primary" type="submit">Submit</button>
                 </div>
               </form>
         </div>

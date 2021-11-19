@@ -9,26 +9,28 @@
     <title>login</title>
 </head>
 <body>
-    <div>
-      <a href="/register"><button class="btn btn-primary">Register</button></a>
+  <br><br><br><br>
+    <div  class="container">
+     
     </div>
-    <div class="container">
-        <h1>Login</h1>
-        <br><br>
+    <br><br><br><br>
+    <div class="title container">
+        <h2>Login  <a href="/register"><button class="btn btn-warning">Register</button></a></h2>
+        <br>
         <form method="post" action="/login">
-            <div class="col-md-4">
-                <label for="validationDefaultUsername" class="form-label">Email</label>
+            <div class="col-md-3">
                 <div class="input-group">
                   <span class="input-group-text" id="inputGroupPrepend2">@</span>
-                  <input type="text" class="form-control" id="validationDefaultUsername" name="email" aria-describedby="inputGroupPrepend2" required>
+                  <input type="text" class="form-control" id="validationDefaultUsername" placeholder="Enter your email address" name="email" aria-describedby="inputGroupPrepend2" required>
                 </div>
               </div>
-              <div class="col-md-4">
-                <label for="validationDefault02" class="form-label">Password</label>
-                <input type="password" class="form-control" id="validationDefault02" name="password"  required>
+              <br>
+              <div class="col-md-3">
+                <input type="password" class="form-control" placeholder="Enter your password" name="password" aria-describedby="validationDefault02" name="password"  required>
               </div>
+              <br>
               <div class="col-12">
-                <button class="btn btn-primary" type="submit">login</button>
+                <button class="btn btn-outline-primary" type="submit">login</button>
               </div>
     </div>
     

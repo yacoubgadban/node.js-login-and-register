@@ -106,7 +106,6 @@ app.post('/login', async(req, res)=>{
         console.log('wrong password')
         res.redirect('/login')
     }else{
-        req.header.email=user.email;
         user.isLoggedIn=true
         await user.save()
         console.log('success')
