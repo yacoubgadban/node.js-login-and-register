@@ -1,7 +1,4 @@
-const express = require('express')
-const app = express()
-const User = require('./../models/user')
-const bcrypt = require('bcrypt')  
+const express = require('express') 
 const router = express.Router();
 const loginController=require('../controllers/loginControl') 
 const registerController=require('../controllers/registerControl') 
