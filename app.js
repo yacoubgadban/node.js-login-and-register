@@ -22,27 +22,22 @@ app.use(express.urlencoded({extends :true}))
 
 
 app.get('/register', async(req, res)=>{
+    
     res.render('register')
 })
 
 app.get('/', async(req, res)=>{
-    if(user.isLoggedIn)
-    try{
-        const user2 = user
-
-        res.redirect('/home/'+""+user2._id+"")
-    }catch(err){
+    
      
         res.render('home')
-    }else{
-        res.render('home')
-
-    }
+    
    
 })
 
-app.get('/home/:id',async(req, res)=>{
+app.get('/user/:id',async(req, res)=>{
+    
     try{
+    const user=await User.findById(req.params.id);
     if(user.isLoggedIn){
         res.render('userhome',{user:user})
 
@@ -80,7 +75,7 @@ app.post('/register', async(req, res)=>{
             });
     
             await user.save();
-            res.redirect('/home/'+""+user._id+"")
+            res.redirect('/user/'+""+user._id+"")
         }catch(err){
             console.log(err.message)
             res.redirect('/register')
@@ -91,15 +86,13 @@ app.post('/register', async(req, res)=>{
 })
 
 app.get('/login', (req, res)=>{
-    if(user.isLoggedIn){
-        res.redirect('/home/'+""+user._id+"")
-    }
+    
     res.render('login')
 })
 
 app.post('/login', async(req, res)=>{
     
-     user = await User.findOne({email:req.body.email})
+     const user = await User.findOne({email:req.body.email})
     if(!user){
         console.log('wrong email')
     res.redirect('/login')
@@ -112,12 +105,11 @@ app.post('/login', async(req, res)=>{
         user.isLoggedIn=true
         await user.save()
         console.log('success')
-        res.redirect('/home/'+""+user._id+"")}
+        res.redirect('/user/'+""+user._id+"")}
 })
 
 app.post('/logout/:id',async(req, res)=>{
-
-     user = await User.findById(req.params.id)  
+    const user=await User.findById(req.params.id)
      user.isLoggedIn=false;
      await user.save();
      res.redirect('/')
