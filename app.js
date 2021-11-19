@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const User = require('./models/user')
 const bcrypt = require('bcrypt')  
 var localStorage = require('local-storage');
+var compression = require('compression')
 
 let user={isLoggedIn: false};
 //database
@@ -12,6 +13,7 @@ mongoose.connect(dbURI,{useNewUrlParser:true ,useUnifiedTopology:true})
 .then((result)=>{console.log('***** Server and database connected ;) *****');
 const port=process.env.PORT ||3000;
 app.listen(port)
+app.use(compression())
 
 })
 .catch((err)=>{err.message})
