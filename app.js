@@ -10,7 +10,8 @@ let user={isLoggedIn: false};
 const dbURI = "mongodb+srv://yacoub2:200748770@cluster0.sxa4m.mongodb.net/login?retryWrites=true&w=majority";
 mongoose.connect(dbURI,{useNewUrlParser:true ,useUnifiedTopology:true})
 .then((result)=>{console.log('***** Server and database connected ;) *****');
-app.listen(3000)
+const port=process.env.PORT ||3000;
+app.listen(port)
 
 })
 .catch((err)=>{err.message})
