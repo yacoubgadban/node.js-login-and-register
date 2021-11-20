@@ -4,6 +4,8 @@ const loginController=require('../controllers/loginControl')
 const registerController=require('../controllers/registerControl') 
 const homeController=require('../controllers/homeControl') 
 const logOutController=require('../controllers/logoutControl') 
+const deleteController=require('../controllers/deleteControl') 
+
 
 
 
@@ -19,5 +21,7 @@ router.get('/user/:id',homeController.homeAfterLogin )
 
 
 router.post('/logout/:id',logOutController.logOut)
+
+router.get('/delete-user/:id',deleteController.deleteUser)
 
 module.exports = router
