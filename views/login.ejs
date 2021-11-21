@@ -19,7 +19,7 @@
         <h2>Login  <a href="/register"><button class="btn btn-warning">Register</button></a></h2>
         <br>
         <%if(joiError){%>
-          <div class="alert alert-danger" style="color: red;" role="alert">
+          <div class="alert alert-danger"  role="alert">
             <%= joiError.error.message%>
             </div>
           <%}%>
@@ -27,12 +27,23 @@
             <div class="col-md-3">
                 <div class="input-group">
                   <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                  <%if(data){%>
+                    <input type="text" class="form-control" id="validationDefaultUsername" value="<%=data.email%>"  placeholder="Enter your email address" name="email" aria-describedby="inputGroupPrepend2" required>
+
+                  <%} else{%>
                   <input type="text" class="form-control" id="validationDefaultUsername" placeholder="Enter your email address" name="email" aria-describedby="inputGroupPrepend2" required>
+               <%}%>
                 </div>
+
               </div>
               <br>
               <div class="col-md-3">
+                <%if(data){%>
+                  <input type="password" class="form-control" placeholder="Enter your password" name="password" aria-describedby="validationDefault02" name="password"  required>
+
+                  <%} else{%>
                 <input type="password" class="form-control" placeholder="Enter your password" name="password" aria-describedby="validationDefault02" name="password"  required>
+                <%}%>
               </div>
               <br>
               <div class="col-12">

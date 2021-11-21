@@ -14,19 +14,39 @@
         <h2>Register <a href="/login"><button type="" class="btn btn-warning">Login</button></a></h2>
         <br>
         <div > 
+          <%if(joiErrorR){%>
+            <div class="alert alert-danger" style="color: red;" role="alert">
+              <%= joiErrorR.error.message%>
+              </div>
+            <%}%>
             <form method="post" action="/register">
                 <div class="col-md-2">
+                  <%if(data){%>
+                    <input type="text" class="form-control" value="<%=data.fname%>" placeholder="Enter first name" id="validationDefault01" name="fname" required>
+
+                    <%} else{%>
                   <input type="text" class="form-control" placeholder="Enter first name" id="validationDefault01" name="fname" required>
+                  <%}%>
                 </div>
                 <br>
                 <div class="col-md-2">
+                  <%if(data){%>
+                    <input type="text" class="form-control" value="<%=data.lname%>" placeholder="Enter  last name" id="validationDefault02" name="lname" required>
+
+                    <%} else{%>
                   <input type="text" class="form-control" placeholder="Enter  last name" id="validationDefault02" name="lname" required>
+                  <%}%>
                 </div>
                 <br>
 
                 <div class="col-md-3">
                   <div class="input-group">
+                    <%if(data){%>
+                      <input type="text" class="form-control" value="<%=data.email%>"  placeholder="Enter  email address" id="validationDefaultUsername" name="email" aria-describedby="inputGroupPrepend2" required>
+
+                      <%} else{%>
                     <input type="text" class="form-control" placeholder="Enter  email address" id="validationDefaultUsername" name="email" aria-describedby="inputGroupPrepend2" required>
+                    <%}%>
                   </div>
                 </div>
                 <br>
