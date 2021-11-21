@@ -8,8 +8,6 @@ const deleteController=require('../controllers/deleteControl')
 
 
 
-
-
 router.get('/register', registerController.GetRegister)
 router.post('/register', registerController.RegisterFunc)
 

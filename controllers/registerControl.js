@@ -30,7 +30,9 @@ const RegisterFunc=async(req, res)=>{
                 password:req.body.password,
                 isLoggedIn:true
             });
-    
+            const saltRounds=10;
+            const salt=await bcrypt.genSalt(saltRounds)
+            user.password=await bcrypt.hash(user.password,salt);
             await user.save();
             res.redirect('/user/'+""+user._id+"")
         }catch(err){
