@@ -7,7 +7,7 @@ var compression = require('compression')
 
 let user={isLoggedIn: false};
 //database
-const dbURI = "mongodb+srv://yacoub2:200748770@cluster0.sxa4m.mongodb.net/login?retryWrites=true&w=majority";
+const dbURI = "mongodb+srv://***@cluster0.sxa4m.mongodb.net/login?retryWrites=true&w=majority";
 mongoose.connect(dbURI,{useNewUrlParser:true ,useUnifiedTopology:true})
 .then((result)=>{console.log('***** Server and database connected ;) *****');
 
